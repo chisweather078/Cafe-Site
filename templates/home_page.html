@@ -1,0 +1,35 @@
+{% include "header.html" %}
+  <header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>COFFEE HOUSE</h1>
+            <span class="subheading">A collection of the best cafes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="row all-cards">
+    <!-- FIRST THREE -->
+    {% for cafe in cafe_list %}
+      <div class="col-md-6 col-lg-4 col-sm-12">
+        <a href="{{ url_for('cafe_page', cafe_id=cafe.id) }}">
+          <div class="card" style="width: 18rem;">
+            <img src={{cafe.img_url}} class="card-img-top" alt="picture of the cafe" height="210rem">
+            <div class="card-body">
+              <h5 class="card-title">{{cafe.name}}</h5>
+              <p class="card-text">Location: {{cafe.location}}</p>
+              <p class="card-text">Seats: {{cafe.seats}}</p>
+              <p class="card-text">Coffee Price: {{cafe.coffee_price}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+{% include "footer.html" %}

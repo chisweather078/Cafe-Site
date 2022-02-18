@@ -1,0 +1,42 @@
+body {
+    background-color: #191919;
+}
+
+.card-body {
+    background-color: #DBD0C0;
+}
+
+nav {
+    color: #EEC373;
+    padding-left: 10%;
+    padding-right: 9%;
+}
+
+header {
+    padding-top: 80px;
+    font-size: large;
+    color: #EEC373;
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+.all-cards {
+    width: 84%;
+    margin-left: 11%;
+    margin-right: 3%;
+}
+
+.card {
+    margin-bottom: 15%;
+
+}
+
+#footer {
+    text-align: center;
+    color: #EEC373;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: black;
+    text-decoration: none;
+}

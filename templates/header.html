@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>COFFEE HOUSE</title>
+
+  <!-- STYLE SHEETS  -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/cafe_site.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/cafe_page.css') }}" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/6c0a795972.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<!--Nav bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('home') }}">COFFEE HOUSE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+          </li>
+          {% if logged_in %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('add_cafe') }}">Add Cafe</a>
+          </li>
+          {% endif %}
+
+          {% if not logged_in %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('register') }}">Sign Up</a>
+          </li>
+          {% endif %}
+
+          {% if logged_in %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+          </li>
+        {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </nav>

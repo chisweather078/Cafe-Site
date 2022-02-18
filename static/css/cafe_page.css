@@ -1,0 +1,60 @@
+h2 {
+    color: white;
+}
+
+section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    font-size: large;
+    margin-bottom: 0.2%;
+    text-align: left;
+    height: 80vh;
+    width: 79%;
+    margin-left: 11%;
+    margin-right: 11%;
+}
+
+.section2 {
+    position: relative;
+    height: 530px;
+    margin-bottom: 5%;
+
+}
+
+.contents {
+    background-color: #DBD0C0;
+    background-size: cover;
+    width: 640px;
+    height: 500px;
+    margin-left: 11%;
+    position: absolute;
+    padding: 2%;
+}
+
+.mapouter {
+    position: absolute;
+    right: 10%;
+    height: 500px;
+    width: 466px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 500px;
+    width: 466px;
+}
+
+hr {
+    width: 90%;
+}
+
+button {
+    margin-left: 40%;
+}
+
+
+p {
+    font-size: medium;
+}

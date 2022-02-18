@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Map</title>
+
+    <style type="text/css">
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 500px;
+            /* The height is 400 pixels */
+            width: 466px;
+            /* The width is the width of the web page */
+        }
+    </style>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            const uluru = { lat: -25.344, lng: 131.036 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h3>My Google Maps Demo</h3>
+            <!-- Fernandez20%and20%Wells20%Exhibition20%Road20%South20%Kensington --> 
+            <!-- Trade20%Commercial20%Road20%Whitechapel -->
+            <!-- One%20&%20All%20Cafe%20Peckham%20Peckham -->
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="466" height="500" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=One%20and%20All%20Cafe%20Peckham%20Peckham&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+        </div>
+    </div>
+</body>
+
+</html>
