@@ -1,49 +1,35 @@
-h2 {
-    color: white;
-}
-
-section {
+.page-image {
+    margin: 11vh 0 1vh 0;
     background-repeat: no-repeat;
-    background-size: cover;
+    object-fit: cover;
     background-position: left bottom;
-    font-size: large;
-    margin-bottom: 0.2%;
-    text-align: left;
+    width: 100%;
     height: 80vh;
-    width: 79%;
-    margin-left: 11%;
-    margin-right: 11%;
 }
 
-.section2 {
-    position: relative;
-    height: 530px;
-    margin-bottom: 5%;
-
+.cafe-details {
+    margin-bottom: 5vh;
 }
 
 .contents {
     background-color: #DBD0C0;
     background-size: cover;
-    width: 640px;
-    height: 500px;
-    margin-left: 11%;
-    position: absolute;
-    padding: 2%;
+    height: 450px;
+    padding: 3vh;
+    border-right: 5px solid #191919;
 }
 
 .mapouter {
-    position: absolute;
-    right: 10%;
-    height: 500px;
-    width: 466px;
+    padding: 0;
 }
 
 .gmap_canvas {
     overflow: hidden;
     background: none !important;
-    height: 500px;
-    width: 466px;
+}
+/*
+h2 {
+    color: white;
 }
 
 hr {
@@ -57,4 +43,13 @@ button {
 
 p {
     font-size: medium;
+}
+
+*/
+
+@media screen and (max-width: 991px ) {
+    .contents {
+        margin-bottom: 1vw;
+        border: 0;
+    }
 }

@@ -1,65 +1,60 @@
 {% include "header.html" %}
+    <div class="container ">
+        <img class="page-image" src="{{ r_cafe.img_url }}" alt="" />
 
-    <section class="masthead" style="background-image: url('{{ r_cafe.img_url }} ');">
-        <div class="overlay"></div>
-        <div class="container">
+        <div class="container cafe-details">
             <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
+                <div class=" col-lg-6 contents">
+                    <h3><i class="fa-solid fa-shop"></i> {{ r_cafe.name }}</h3>
+                    <h4><i class="fa-solid fa-location-arrow"></i>&nbsp;&nbsp;&nbsp;{{ r_cafe.location }}</h4>
+                    {% if r_cafe.has_sockets %}
+                    <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbsp;Sockets</p>
+                    {% else %}
+                    <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbsp;Sockets</p>
+                    {% endif %}
+
+                    {% if r_cafe.has_toilets %}
+                    <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbsp;Toilets</p>
+                    {% else %}
+                    <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbsp;Toilets</p>
+                    {% endif %}
+
+                    {% if r_cafe.has_wifi%}
+                    <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbsp;WiFi</p>
+                    {% else %}
+                    <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbsp;WiFi</p>
+                    {% endif %}
+
+                    {% if r_cafe.can_take_calls %}
+                    <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbsp;Take Calls</p>
+                    {% else %}
+                    <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbsp;Take Calls</p>
+                    {% endif %}
+
+                    <p><i class="fa-solid fa-couch fa-lg"></i>  &nbsp;Seats: {{ r_cafe.seats }}</p>
+                    <p><i class="fa-solid fa-mug-saucer fa-lg"></i>  &nbsp;Coffee Price: {{ r_cafe.coffee_price}}</p>
+                    <p><i class="fa-solid fa-clock fa-lg"></i>  &nbsp;Open Time: {{ open_times }}</p>
+                    <p><i class="fa-solid fa-star fa-lg"></i>  &nbsp;Rating: {{ cafe_ratings }}/5</p>
+
+                    {% if logged_in %}
+                        <hr>
+                        {% if r_cafe.owner_id == owner_id %}
+                            <a class="btn btn-dark" href="{{ url_for('edit_cafe', cafe_id=r_cafe.id) }}" style="color: #eec373; margin-left: 20%; margin-right: 20%"><i class="fa-solid fa-pen"></i>&nbsp Review</a>
+                            <a class="btn btn-dark" href="{{ url_for('delete_cafe', cafe_id=r_cafe.id) }}" style="color: #eec373;"><i class="fa-solid fa-trash"></i>&nbsp Delete</a>
+                        {% else %}
+                            <a class="btn btn-dark" href="{{ url_for('edit_cafe', cafe_id=r_cafe.id) }}" style="color: #eec373; margin-left: 40%;"><i class="fa-solid fa-pen"></i>&nbsp Review</a>
+                        {% endif %}
+                    {% endif %}
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="section2">
-        <div class="contents">
-            <h3><i class="fa-solid fa-shop"></i>    {{ r_cafe.name }}</h3>
-            <h4><i class="fa-solid fa-location-arrow"></i> &nbsp&nbsp{{ r_cafe.location }}</h4>
-            {% if r_cafe.has_sockets %}
-            <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbspSockets</p>
-            {% else %}
-            <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbspSockets</p>
-            {% endif %}
-
-            {% if r_cafe.has_toilets %}
-            <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbspToilets</p>
-            {% else %}
-            <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbspToilets</p>
-            {% endif %}
-
-            {% if r_cafe.has_wifi%}
-            <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbspWiFi</p>
-            {% else %}
-            <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbspWiFi</p>
-            {% endif %}
-
-            {% if r_cafe.can_take_calls %}
-            <p><i class="fa-solid fa-square-check fa-lg"></i>  &nbspTake Calls</p>
-            {% else %}
-            <p><i class="fa-solid fa-square-xmark fa-lg"></i>  &nbspTake Calls</p>
-            {% endif %}
-
-            <p><i class="fa-solid fa-couch fa-lg"></i>  &nbspSeats: {{ r_cafe.seats }}</p>
-            <p><i class="fa-solid fa-mug-saucer fa-lg"></i>  &nbspCoffee Price: {{ r_cafe.coffee_price}}</p>
-            <p><i class="fa-solid fa-clock fa-lg"></i>  &nbspOpen Time: {{ open_times }}</p>
-            <p><i class="fa-solid fa-star fa-lg"></i>  &nbspRating: {{ cafe_ratings }}/5</p>
-
-            {% if logged_in %}
-                <hr>
-                {% if r_cafe.owner_id == owner_id %}
-                    <a class="btn btn-dark" href="{{ url_for('edit_cafe', cafe_id=r_cafe.id) }}" style="color: #eec373; margin-left: 20%; margin-right: 20%"><i class="fa-solid fa-pen"></i>&nbsp Review</a>
-                    <a class="btn btn-dark" href="{{ url_for('delete_cafe', cafe_id=r_cafe.id) }}" style="color: #eec373;"><i class="fa-solid fa-trash"></i>&nbsp Delete</a>
-                {% else %}
-                    <a class="btn btn-dark" href="{{ url_for('edit_cafe', cafe_id=r_cafe.id) }}" style="color: #eec373; margin-left: 40%;"><i class="fa-solid fa-pen"></i>&nbsp Review</a>
-                {% endif %}
-            {% endif %}
-        </div>
-
-        <div class="mapouter">
-            <div class="gmap_canvas">
-                <iframe width="466" height="500" id="gmap_canvas"
-                    src="{{ link }}"
-                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                </iframe>
+                <div class="col-lg-6 mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="700" height="450" id="gmap_canvas"
+                            src="{{ link }}"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

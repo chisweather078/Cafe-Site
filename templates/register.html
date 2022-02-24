@@ -9,7 +9,7 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col mx-auto">
           <div class="page-heading">
             <h1>Sign Up</h1>
             <span class="subheading">Start Contributing to the Coffee House!</span>
@@ -19,9 +19,9 @@
     </div>
   </header>
 
-  <div class="container" style=" color: #eec373; line-height: 3rem;">
+  <div class="container account-form" style=" color: #eec373; line-height: 3rem;">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-3 col-md-4 col-sm-6 mx-auto">
 
        {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "dark"}) }}
 

@@ -16,7 +16,7 @@ open_times = ["8:00 - 20:00", "7:00 - 19:00", "24 Hours", "8:00 - 17:00", "7:30 
 cafe_ratings = ["4.2", "4.9", "3.7", "4.3", "4.5", "4.1"]
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SECRET_KEY'] = "asdfvff"
 Bootstrap(app)
 
 ##CONNECT TO DB
