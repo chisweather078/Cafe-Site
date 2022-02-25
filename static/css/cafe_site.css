@@ -72,6 +72,7 @@ a:link, a:visited, a:hover, a:active {
     padding-top: 7vh;
 }
 
+
 @media screen and (max-width: 440px) {
     nav {
         padding: 0 4vw;

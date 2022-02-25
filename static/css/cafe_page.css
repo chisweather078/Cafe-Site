@@ -27,7 +27,7 @@
     overflow: hidden;
     background: none !important;
 }
-/*
+
 h2 {
     color: white;
 }
@@ -45,7 +45,6 @@ p {
     font-size: medium;
 }
 
-*/
 
 @media screen and (max-width: 991px ) {
     .contents {
